@@ -5,9 +5,13 @@ import NotFound from "../components/img/NotFound.svg";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 
+// Props:
+// flag: A boolean flag that determines whether the row should have horizontal scrolling or not.
+// data: An array of data representing the items to be displayed in the row.
+// scrollValue: A value indicating the amount of scroll in the row.
 
-const RowContainer = ({ flag, data, scrollValue }) => {
-  const rowContainer = useRef();
+const RowContainer = ({ flag, data, scrollValue }) => { // this props are commes from maincointainer.jasx and use it here for fruits
+  const rowContainer = useRef(); 
 
   const [items, setItems] = useState([]);
 
@@ -31,8 +35,8 @@ const RowContainer = ({ flag, data, scrollValue }) => {
   }, [items]);
 
   return (
-    <div
-      ref={rowContainer}
+    <div  // inside row container we use that data that filter from main cntainer
+      ref={rowContainer} // pass {rowContainer} ref here as prop 
       className={`w-full p-50 flex items-center gap-3 my-12 scroll-smooth ${flag
         ? "overflow-x-scroll scrollbar-none"
         : "overflow-x-hidden flex-wrap justify-center"

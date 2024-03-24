@@ -9,20 +9,21 @@ import { actionType } from "./context/reducer";
 import AboutUs from './components/About';
 
 const App = () => {
+  // for  app is losding then  load the information and saving the detail need to dispatch the information 
   const [{} ,dispatch] = useStateValue();
 
   const fetchData = async () => {
-    await getAllFoodItems().then((data) => {
+    await getAllFoodItems().then((data) => {  // get all food item deta
       console.log(data);
       dispatch({
         type: actionType.SET_FOOD_ITEMS,
-        foodItems: data,
+        foodItems: data,  // now all details are get and we can ad dthis detail where i needed this
       });
     });
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData(); // load only one time and fetch the data 
   }, []);
 
 

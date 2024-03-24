@@ -12,9 +12,9 @@ import Footer from './Footer';
 
 
 const MainContainer = () => {
-  const [{ foodItems,cartShow},dispatch] = useStateValue();
-  const [directionChange, setDirectionChange] = useState(false);
-  const [scrollValue, setScrollValue] = useState(0);
+  const [{ foodItems,cartShow},dispatch] = useStateValue(); // use dynamic data from food items and filter it 
+  const [directionChange, setDirectionChange] = useState(false); // for direction left or reft direction use this 
+  const [scrollValue, setScrollValue] = useState(0); // for scrolling left and right  for fruit items
 
   useEffect(() => { }, [scrollValue,cartShow]);
   return (
@@ -64,7 +64,7 @@ const MainContainer = () => {
     <RowContainer 
         scrollValue={scrollValue}
           flag={true}
-          data={foodItems?.filter((n) => n.category === "fruits")}
+          data={foodItems?.filter((n) => n.category === "fruits")} // use dynamic data from food items and filter it and use it in row container
     />
     </section>
 

@@ -14,13 +14,14 @@ const firebaseConfig = {
   };
 
 
+  // only intialize if there is no app for avoid every time refresh page
   const app=getApps.length>0 ? getApp() : initializeApp(firebaseConfig);
 
   const firestore=getFirestore(app);
 
   const storage=getStorage(app);
 
-  export {app,firestore,storage};
+  export {app,firestore,storage}; // export all thing
 
 
  
